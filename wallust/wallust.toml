@@ -1,0 +1,17 @@
+# --- GLOBAL SETTINGS (Must come first) ---
+backend = "full"
+color_space = "lch"
+threshold = 20
+check_contrast = true
+
+[templates]
+rofi = { src = "/home/oahba/.config/wallust/rofi.rasi", dst = "/home/oahba/.config/rofi/wallust-colors.rasi" }
+ghostty = { src = "/home/oahba/.config/wallust/ghostty.ini", dst = "/home/oahba/.config/ghostty/theme" }
+waybar = { src = "/home/oahba/.config/wallust/waybar.css", dst = "/home/oahba/.config/waybar/style.css" }
+hyprland = { src = "/home/oahba/.config/wallust/colors-hyprland.conf", dst = "/home/oahba/.config/hypr/colors-hyprland.conf" }
+peaclock = { src = "/home/oahba/.config/wallust/peaclock", dst = "/home/oahba/.peaclock/config" }
+nvim = { src = "/home/oahba/.config/wallust/colors_neopywal.vim", dst = "/home/oahba/.cache/wal/colors-wal.vim" }
+gtk3 = { src = "/home/oahba/.config/wallust/gtk.css", dst = "/home/oahba/.config/gtk-3.0/gtk.css"}
+gtk4 = { src = "/home/oahba/.config/wallust/gtk.css", dst = "/home/oahba/.config/gtk-4.0/gtk.css"}
+gtk2 = { src = "/home/oahba/.config/wallust/gtk-2.0.mine", dst = "/home/oahba/.gtkrc-2.0.mine"}
+

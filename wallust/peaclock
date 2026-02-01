@@ -1,0 +1,12 @@
+mode clock
+block 2 1
+#padding 1 1
+margin 2 1
+date-padding 2
+set hour-24 on
+set seconds on
+view digital
+
+style active-fg #{{color6 | strip}}
+style inactive-fg #{{color0 | strip}}
+style date #{{color6 | strip}}

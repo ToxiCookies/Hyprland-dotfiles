@@ -1,0 +1,2 @@
+# Wallust GTK2 Overrides
+gtk-color-scheme = "selected_bg_color:#{{color6 | strip}}\nselected_fg_color:#{{background | strip}}"

@@ -1,0 +1,8 @@
+* {
+    /* Wallust-generated palette */
+    bg:          #{{background | strip}};
+    bg-alt:      #{{color0 | strip}};
+    bg-selected: #{{color8 | strip}};
+    fg:          #{{foreground | strip}};
+    accent:      #{{color4 | strip}};
+}

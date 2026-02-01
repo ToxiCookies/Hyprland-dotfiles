@@ -1,0 +1,33 @@
+# MPD settings
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "~/Music"
+
+# Visualizer settings
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer feed"
+visualizer_type = "spectrum"
+visualizer_look = "●▮"
+visualizer_color = "blue,cyan,green,yellow,magenta,red"
+
+# Interface settings
+user_interface = "alternative"
+alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
+alternative_header_second_line_format = "{{$4%a$9}{ - $7%b$9}{ (%y)}}|{%D}"
+
+song_columns_list_format = "(25)[blue]{a} (40)[white]{t|f} (25)[cyan]{b} (7f)[magenta]{l}"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+
+progressbar_look = "─╼ "
+progressbar_color = "blue"
+progressbar_elapsed_color = "cyan"
+
+main_window_color = "white"
+header_window_color = "cyan"
+volume_color = "yellow"
+statusbar_color = "white"
+current_item_prefix = "$(blue)$r"
+current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(white)$r"
+current_item_inactive_column_suffix = "$/r$(end)"

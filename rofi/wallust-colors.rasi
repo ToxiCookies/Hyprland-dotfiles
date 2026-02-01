@@ -1,0 +1,8 @@
+* {
+    /* Wallust-generated palette */
+    bg:          #15141A;
+    bg-alt:      #403E46;
+    bg-selected: #99AD6C;
+    fg:          #EBFFBE;
+    accent:      #D84DD7;
+}

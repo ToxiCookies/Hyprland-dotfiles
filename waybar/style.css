@@ -1,0 +1,63 @@
+/* 1. Variable Definitions at the top */
+@define-color bg #15141A;
+@define-color fg #EBFFBE;
+@define-color accent #C7FF46;
+@define-color border #99AD6C;
+
+/* 2. Global Resets */
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 3. The Bar Container (Invisible) */
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+/* 4. The Island Modules (Opaque) */
+#workspaces,
+#submap,
+#custom-music,
+#tray,
+#custom-brightness,
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock {
+    background-color: @bg;
+    color: @accent;
+    margin: 5px 6px;
+    padding: 2px 16px;
+    border-radius: 15px;
+    border: 1px solid @border;
+}
+
+/* 5. Icon Spacing Fix */
+label {
+    padding-left: 6px;
+}
+
+#workspaces button {
+    color: #DBF79A; /* Wallust light color */
+    padding: 0 8px;
+    margin: 0 4px;
+}
+
+#workspaces button.active {
+    color: #C7FF46; /* Your Navy Teal accent */
+    border-bottom: 2px solid #C7FF46;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Styles workspaces that have windows in them but aren't active */
+#workspaces button.visible {
+    color: #D84DD7;
+}

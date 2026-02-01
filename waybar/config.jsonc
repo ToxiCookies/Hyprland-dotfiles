@@ -1,0 +1,104 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "margin-top": 5,
+    "spacing": 4,
+
+    "modules-left": ["custom/music", "bluetooth","tray"],
+    "modules-center": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-right": ["custom/brightness", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock"],
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+	"show-passive-items": true
+    },
+
+    "custom/music": {
+        "format": "{}",
+        "escape": true,
+        "interval": 2,
+        "exec": "status=$(mpc status); if echo \"$status\" | grep -q \"\\[paused\\]\"; then echo \"󰏤 $(mpc current)\"; elif echo \"$status\" | grep -q \"\\[playing\\]\"; then echo \"󰐊 $(mpc current)\"; else echo \"󰎆  Stopped\"; fi",
+        "on-click": "mpc toggle",
+        "max-length": 50
+    },
+
+    "custom/brightness": {
+        "format": "   {}",
+	"return-type": "json",
+	"exec": "~/.local/bin/format_brightness.sh",
+	"exec-if": "exit 0",
+	"signal": 8,
+	"interval": "once"
+    },
+
+    "hyprland/submap": {
+        "format": "⌨  {}",
+        "on-click": "hyprctl dispatch submap reset",
+        "default-submap": "reset"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "eDP-1": [1, 2, 3, 4, 5],
+            "HDMI-A-1": [6, 7, 8, 9, 10]
+        }
+    },
+
+    "bluetooth": {
+        "format": "  {status}",
+        "format-connected": "  {device_alias}",
+        "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
+        "interval": 30,
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding which device gets displayed
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager",
+        "format-off": "󰂲  off",
+        "format-disabled": "󰂲  disabled"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+	"format-muted": "󰝟  Muted",
+        "format-icons": ["󰕿", "󰖀", "󰕾"]
+    },
+
+    "cpu": { "format": "   {usage}%" },
+    "memory": { "format": "   {percentage}%" },
+    "temperature": { "critical-threshold": 80, "format": "{temperatureC}°C  " },
+    "battery": { "format": "{capacity}%  {icon}", "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"] },
+    "network": { 
+        "format-wifi": "    {essid}", 
+        "format-ethernet": "󰈀", 
+        "format-disconnected": "󰖪",
+        "on-click": "nm-connection-editor"
+    },
+    "clock": { 
+	"format": "{:%T}",
+	"tooltip-format": "{:%F (%A)}",
+	"interval": 1
+    }
+}
